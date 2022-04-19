@@ -9,8 +9,8 @@ class Input(BaseModel):
     fastq1filetype: str
     fastq2: str
     fastq2filetype: str
-    reference: str | None = None
-    referencefiletype: str | None = None
+    reference: str
+    referencefiletype: str
 
 
 app = FastAPI()
