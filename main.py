@@ -19,6 +19,11 @@ app = FastAPI()
 @app.post("/workflow/run")
 async def run(input: Input):
     return workflow_service.run(input.name,
-                         input.fastq1, input.fastq1filetype,
-                         input.fastq2, input.fastq2filetype,
-                         input.reference, input.referencefiletype)
+                                input.fastq1, input.fastq1filetype,
+                                input.fastq2, input.fastq2filetype,
+                                input.reference, input.referencefiletype)
+
+
+@app.get("/health")
+def health():
+    return "UP"
